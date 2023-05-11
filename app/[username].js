@@ -4,11 +4,11 @@ import { useRouter, useSearchParams } from 'expo-router'
 
 const profile = () => {
   const router = useRouter()
-  const { name, surname } = useSearchParams()
+  const { name, username } = useSearchParams()
   
   return (
     <View style={styles.container}>
-      <Text style={{fontSize: 30}}>Hello {name}</Text>
+      <Text style={{fontSize: 30}}>Hello {name} (@{username})</Text>
       
       <Button title='Go Back' onPress={ () => router.back() } />
     </View>

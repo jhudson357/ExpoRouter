@@ -1,6 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 
+const users = [
+  {
+    username: 'jamesss',
+    name: 'James Hudson'
+  },
+  {
+    username: 'pattieee',
+    name: 'Pattie Hudson'
+  },
+  {
+    username: 'lucasss',
+    name: 'Lucas Hudson'
+  },
+]
+
 export default function Page() {
   return (
     <View style={styles.container}>
@@ -8,16 +23,16 @@ export default function Page() {
         <Text style={styles.title}>Hello World</Text>
         <Text style={styles.subtitle}>This is the first page of your app.</Text>
 
-        <Link href='/profile?name=Pattie&surname=Hudson' style={styles.link}>Open Pattie profile</Link>
-        <Link 
-          href={{ 
-            pathname: '/profile', 
-            params: { name: 'James', surname: 'Hudson'} 
-          }}
-          style={styles.link}
-        >
-          Open James profile
-        </Link>
+        {users.map(user => (
+          <Link 
+            key={users.username} 
+            href={`/${user.username}`} 
+            style={styles.link}
+          >
+            Open {user.name}'s profile
+          </Link>
+        ))}
+
       </View>
     </View>
   );
