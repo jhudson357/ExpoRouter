@@ -42,7 +42,13 @@ export default () => {
             backgroundColor: 'white' 
           },
           headerTintColor: 'cornflowerblue'  
-        }} 
+        }}
+      />
+      <Stack.Screen 
+        name='home'
+        options={{
+          headerShown: false
+        }}
       />
     </Stack>
   )

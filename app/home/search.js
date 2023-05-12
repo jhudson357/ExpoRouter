@@ -17,27 +17,25 @@ const users = [
 ]
 
 export default function Page() {
-  return <Redirect href={'/home'} />
-  
-  // return (
-  //   <View style={styles.container}>
-  //     <View style={styles.main}>
-  //       <Text style={styles.title}>Hello World</Text>
-  //       <Text style={styles.subtitle}>This is the first page of your app.</Text>
+  return (
+    <View style={styles.container}>
+      <View style={styles.main}>
+        <Text style={styles.title}>Hello World</Text>
+        <Text style={styles.subtitle}>This is the first page of your app.</Text>
 
-  //       {users.map(user => (
-  //         <Link 
-  //           key={user.username} 
-  //           href={`/${user.username}`} 
-  //           style={styles.link}
-  //         >
-  //           Open {user.name}'s profile
-  //         </Link>
-  //       ))}
+        {users.map(user => (
+          <Link 
+            key={user.username} 
+            href={`/${user.username}`} 
+            style={styles.link}
+          >
+            Open {user.name}'s profile
+          </Link>
+        ))}
 
-  //     </View>
-  //   </View>
-  // );
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
