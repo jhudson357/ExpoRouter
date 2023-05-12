@@ -25,7 +25,7 @@ export default function Page() {
 
         {users.map(user => (
           <Link 
-            key={users.username} 
+            key={user.username} 
             href={`/${user.username}`} 
             style={styles.link}
           >
